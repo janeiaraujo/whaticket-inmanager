@@ -36,7 +36,7 @@ const messages = {
       dashboard: {
         charts: {
           perDay: {
-            title: "Tickets hoje: ",
+            title: "Atendimentos hoje: ",
           },
         },
         messages: {
@@ -130,7 +130,7 @@ const messages = {
           deleteTitle: "Deletar ",
           importTitlte: "Importar contatos",
           deleteMessage:
-            "Tem certeza que deseja deletar este contato? Todos os tickets relacionados serão perdidos.",
+            "Tem certeza que deseja deletar este contato? Todos os Atendimentos relacionados serão perdidos.",
           importMessage: "Deseja importas todos os contatos do telefone?",
         },
         buttons: {
@@ -284,7 +284,7 @@ const messages = {
         listItems: {
           dashboard: "Dashboard",
           connections: "Conexões",
-          tickets: "Tickets",
+          tickets: "Atendimentos",
           contacts: "Contatos",
           quickAnswers: "Respostas Rápidas",
           queues: "Filas",
