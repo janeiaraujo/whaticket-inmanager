@@ -37,10 +37,22 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import toastError from "../../errors/toastError";
 
 let Mp3Recorder = null;
+let lameReady = false;
+
+const ensureLame = async () => {
+  if (typeof window === "undefined") return;
+
+  if (!lameReady || !window.Lame) {
+    const lameModule = await import("lamejs");
+    window.Lame = lameModule.default || lameModule;
+    lameReady = true;
+  }
+};
 
 const initRecorder = async () => {
   if (!Mp3Recorder) {
     try {
+      await ensureLame();
       const MicRecorder = (await import("mic-recorder-to-mp3")).default;
       Mp3Recorder = new MicRecorder({ bitRate: 128 });
     } catch (error) {
